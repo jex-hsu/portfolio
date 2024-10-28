@@ -12,7 +12,6 @@ import {
   TimelineSeparator,
 } from "@mui/lab";
 import { Card, CardContent, Typography, useMediaQuery } from "@mui/material";
-import { motion } from "framer-motion";
 import SectionHeading from "./section-heading";
 
 export default function Experience() {
@@ -21,18 +20,17 @@ export default function Experience() {
     thresholdValue: 0.2,
   });
   const isSmallScreen = useMediaQuery("(max-width:640px)");
-  const MotionTimelineItem = motion(TimelineItem);
 
   return (
     <section ref={sectionRef} id="experience" className="mb-28 scroll-mt-28">
       <SectionHeading>My experiences</SectionHeading>
       <Timeline position={isSmallScreen ? "right" : "alternate-reverse"}>
         {experiencesData.map((experience, index) => (
-          <MotionTimelineItem key={index}>
+          <TimelineItem key={index}>
             <TimelineOppositeContent
               sx={{
                 m: "auto",
-                ...(isSmallScreen && { WebkitFlex: "0", p: "0" }),
+                ...(isSmallScreen && { display: "none" }),
               }}
               color="text.secondary"
             >
@@ -63,7 +61,7 @@ export default function Experience() {
                 </CardContent>
               </Card>
             </TimelineContent>
-          </MotionTimelineItem>
+          </TimelineItem>
         ))}
       </Timeline>
     </section>

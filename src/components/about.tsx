@@ -20,7 +20,7 @@ export default function About() {
       transition={{ delay: 0.175 }}
     >
       <SectionHeading>About me</SectionHeading>
-      <p className="mb-3">
+      <p className="mb-3 text-left">
         After graduating with a degree in{" "}
         <span className="font-medium">Accounting</span>, I decided to pursue my
         passion for programming. I enrolled in a coding bootcamp and learned{" "}
@@ -38,7 +38,7 @@ export default function About() {
         developer.
       </p>
 
-      <p>
+      <p className="text-left">
         <span className="italic">When I&apos;m not coding</span>, I enjoy
         playing video games, watching movies, and playing with my dog. I also
         enjoy <span className="font-medium">learning new things</span>. I am
